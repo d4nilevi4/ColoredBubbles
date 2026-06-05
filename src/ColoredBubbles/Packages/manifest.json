@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "com.felid-force-studios.static-ecs": "https://github.com/Felid-Force-Studios/StaticEcs.git",
+    "com.felid-force-studios.static-ecs-analyzer": "https://github.com/Felid-Force-Studios/StaticEcs-Analyzer.git",
+    "com.felid-force-studios.static-ecs-unity": "https://github.com/Felid-Force-Studios/StaticEcs-Unity.git",
+    "com.felid-force-studios.static-pack": "https://github.com/Felid-Force-Studios/StaticPack.git",
     "com.unity.ai.navigation": "2.0.10",
     "com.unity.collab-proxy": "2.11.3",
     "com.unity.ide.rider": "3.0.39",

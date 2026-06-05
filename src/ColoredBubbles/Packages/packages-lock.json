@@ -1,5 +1,33 @@
 {
   "dependencies": {
+    "com.felid-force-studios.static-ecs": {
+      "version": "https://github.com/Felid-Force-Studios/StaticEcs.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "bebb192d71249a9940a483f4bf185a63440e004e"
+    },
+    "com.felid-force-studios.static-ecs-analyzer": {
+      "version": "https://github.com/Felid-Force-Studios/StaticEcs-Analyzer.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ea28c0db7617c4902e5e8a992c9d6660fcbd15b7"
+    },
+    "com.felid-force-studios.static-ecs-unity": {
+      "version": "https://github.com/Felid-Force-Studios/StaticEcs-Unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "86f9aeaf61bf5f07003399efba6b2fbd81be94ee"
+    },
+    "com.felid-force-studios.static-pack": {
+      "version": "https://github.com/Felid-Force-Studios/StaticPack.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5ecf19df31a2e1c4795851b0d1d52a17c695c5ed"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.10",
       "depth": 0,
