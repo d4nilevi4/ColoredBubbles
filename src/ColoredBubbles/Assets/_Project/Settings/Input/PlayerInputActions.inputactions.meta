@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c6f08e39bd3974083a28facc0aeabb7a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 8404be70184654265930450def6a9037, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: Assets/_Project/Code/Gameplay/Input/PlayerInputActions.cs
+  wrapperClassName: PlayerInputActions
+  wrapperCodeNamespace: Bubbles.Gameplay
