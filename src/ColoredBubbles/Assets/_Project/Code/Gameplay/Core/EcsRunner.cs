@@ -33,13 +33,17 @@ public sealed class EcsRunner : MonoBehaviour
     {
         InputSys.Update();
         GameplaySys.Update();
-        RenderSys.Update();
-        GameW.Tick();
     }
 
     private void FixedUpdate()
     {
         PhysicsSys.Update();
+    }
+
+    private void LateUpdate()
+    {
+        RenderSys.Update();
+        GameW.Tick();
     }
 
     private void OnDestroy()
