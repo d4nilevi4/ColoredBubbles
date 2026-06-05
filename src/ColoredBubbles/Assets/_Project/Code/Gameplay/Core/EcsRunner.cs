@@ -16,22 +16,10 @@ public sealed class EcsRunner : MonoBehaviour
 
         EcsDebug<GameWT>.AddWorld<GameplayST>();
 
-        InputSys
-            .Add(new InitializePlayerInputMapInputSys(), short.MinValue)
-            .Add(new DisposePlayerInputMapInputSys(), short.MaxValue)
-            
-            .Add(new RegisterInputActionEvents())
-            
-            .Add(new EmitRotationDeltaSystem())
-            ;
-
-        // GameplaySys
-            // .Add(new System(), 0)
-            // ;
-            
-        // PhysicsSys
-            // .Add(new System(), 0)
-            // ;     
+        RegisterInputSystems();
+        RegisterGameplaySystems();
+        RegisterPhysicsSystems();
+        RegisterRenderSystems();
 
         GameW.Initialize();
 
@@ -62,5 +50,31 @@ public sealed class EcsRunner : MonoBehaviour
         RenderSys.Destroy();
 
         GameW.Destroy();
+    }
+
+    private static void RegisterInputSystems()
+    {
+        InputSys.Add(new InitializePlayerInputMapInputSys(), short.MinValue);
+        InputSys.Add(new DisposePlayerInputMapInputSys(), short.MaxValue);
+
+        InputSys.Add(new RegisterInputActionEvents());
+
+        InputSys.Add(new EmitRotationDeltaSystem());
+    }
+
+    private static void RegisterGameplaySystems()
+    {
+        GameplaySys.Add(new RotateCameraSystem());
+        GameplaySys.Add(new PositionCameraSystem());
+    }
+
+    private static void RegisterPhysicsSystems()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void RegisterRenderSystems()
+    {
+        RenderSys.Add(new SynchronizeCameraTransformSystem(), short.MaxValue);
     }
 }

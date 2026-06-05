@@ -1,6 +1,6 @@
 namespace Bubbles.Gameplay;
 
-public struct CameraPositionSystem : ISystem
+public struct PositionCameraSystem : ISystem
 {
     public void Update()
     {
