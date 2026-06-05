@@ -7,13 +7,14 @@ public sealed class EcsRunner : MonoBehaviour
         GameW.Create(WorldConfig.Default());
 
         InputSys.Create();
-        UpdateSys.Create();
+        GameplaySys.Create();
         PhysicsSys.Create();
+        RenderSys.Create();
 
         GameW.Types().RegisterAll(typeof(EcsRunner).Assembly);
         UnityEventTypes.Register<GameWT>();
 
-        EcsDebug<GameWT>.AddWorld<UpdateST>();
+        EcsDebug<GameWT>.AddWorld<GameplayST>();
 
         InputSys
             .Add(new InitializePlayerInputMapInputSys(), short.MinValue)
@@ -24,7 +25,7 @@ public sealed class EcsRunner : MonoBehaviour
             .Add(new EmitRotationDeltaSystem())
             ;
 
-        // UpdateSys
+        // GameplaySys
             // .Add(new System(), 0)
             // ;
             
@@ -35,14 +36,16 @@ public sealed class EcsRunner : MonoBehaviour
         GameW.Initialize();
 
         InputSys.Initialize();
-        UpdateSys.Initialize();
+        GameplaySys.Initialize();
         PhysicsSys.Initialize();
+        RenderSys.Initialize();
     }
 
     private void Update()
     {
         InputSys.Update();
-        UpdateSys.Update();
+        GameplaySys.Update();
+        RenderSys.Update();
         GameW.Tick();
     }
 
@@ -54,8 +57,9 @@ public sealed class EcsRunner : MonoBehaviour
     private void OnDestroy()
     {
         InputSys.Destroy();
-        UpdateSys.Destroy();
+        GameplaySys.Destroy();
         PhysicsSys.Destroy();
+        RenderSys.Destroy();
 
         GameW.Destroy();
     }
