@@ -15,9 +15,14 @@ public sealed class EcsRunner : MonoBehaviour
 
         EcsDebug<GameWT>.AddWorld<UpdateST>();
 
-        // InputSys
-            // .Add(new System(), 0)
-            // ;
+        InputSys
+            .Add(new InitializePlayerInputMapInputSys(), short.MinValue)
+            .Add(new DisposePlayerInputMapInputSys(), short.MaxValue)
+            
+            .Add(new RegisterInputActionEvents())
+            
+            .Add(new EmitRotationDeltaSystem())
+            ;
 
         // UpdateSys
             // .Add(new System(), 0)
