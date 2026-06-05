@@ -64,6 +64,8 @@ public sealed class EcsRunner : MonoBehaviour
         InputSys.Add(new RegisterInputActionEvents());
 
         InputSys.Add(new EmitRotationDeltaSystem());
+        
+        InputSys.Add(new RaiseRaycastEventSystem());
     }
 
     private static void RegisterGameplaySystems()
