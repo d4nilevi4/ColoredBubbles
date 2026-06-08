@@ -2,7 +2,7 @@ namespace Bubbles.Gameplay;
 
 public struct GravitatingMatchingBubblesSystem : ISystem
 {
-    private static All<BubblePosition, BubbleVelocity> BubbleFilter;
+    private static readonly All<BubblePosition, BubbleVelocity> BubbleFilter;
 
     public void Update()
     {

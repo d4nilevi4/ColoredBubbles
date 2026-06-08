@@ -2,7 +2,7 @@ namespace Bubbles.Gameplay;
 
 public struct HandleBubbleSelectionSystem : ISystem
 {
-    private static All<BubbleColor> _bubbleColorFilter = default;
+    private static readonly All<BubbleColor> BubbleColorFilter = default;
     
     private EventReceiver<GameWT, SelectBubbleEvent> _selectBubbleReceiver;
 
@@ -23,7 +23,7 @@ public struct HandleBubbleSelectionSystem : ISystem
             if (!selectBubbleEvent.Value.Target.TryUnpack<GameWT>(out var target))
                 return;
             
-            if(!target.IsMatch(_bubbleColorFilter))
+            if(!target.IsMatch(BubbleColorFilter))
                 return;
             
             if (TryGetSelectedBubble(out var selectedBubble))
