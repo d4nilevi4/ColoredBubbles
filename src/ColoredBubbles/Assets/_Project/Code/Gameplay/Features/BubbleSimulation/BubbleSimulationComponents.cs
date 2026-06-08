@@ -15,4 +15,3 @@ public struct SelectBubbleEvent : IEvent
 {
     public EntityGID Target;
 }
-

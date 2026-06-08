@@ -72,6 +72,8 @@ public sealed class EcsRunner : MonoBehaviour
     {
         GameplaySys.Add(new RotateCameraSystem());
         GameplaySys.Add(new PositionCameraSystem());
+        
+        GameplaySys.Add(new HandleBubbleSelectionSystem());
     }
 
     private static void RegisterPhysicsSystems()
