@@ -77,7 +77,9 @@ public sealed class EcsRunner : MonoBehaviour
     private static void RegisterPhysicsSystems()
     {
         PhysicsSys.Add(new HandleRaycastSystem());
+        
         PhysicsSys.Add(new BubbleSimulationSystem());
+        PhysicsSys.Add(new GravitatingMatchingBubblesSystem());
     }
 
     private static void RegisterRenderSystems()

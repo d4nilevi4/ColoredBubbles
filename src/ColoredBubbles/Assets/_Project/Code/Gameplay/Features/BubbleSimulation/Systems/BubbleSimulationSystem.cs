@@ -4,12 +4,6 @@ public struct BubbleSimulationSystem : ISystem
 {
     private const float MinInteractionDistanceSqr = 1e-8f;
 
-    public void Init()
-    {
-        if (!GameW.HasResource<SimulationConfig>())
-            GameW.SetResource(SimulationConfig.Default());
-    }
-
     public void Update()
     {
         SimulationConfig config = GameW.GetResource<SimulationConfig>();
