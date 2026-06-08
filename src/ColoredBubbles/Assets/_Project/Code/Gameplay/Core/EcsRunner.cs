@@ -76,7 +76,7 @@ public sealed class EcsRunner : MonoBehaviour
 
     private static void RegisterPhysicsSystems()
     {
-        throw new NotImplementedException();
+        PhysicsSys.Add(new HandleRaycastSystem());
     }
 
     private static void RegisterRenderSystems()

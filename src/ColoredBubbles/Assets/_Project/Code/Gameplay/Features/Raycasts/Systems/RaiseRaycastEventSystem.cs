@@ -18,16 +18,15 @@ public struct RaiseRaycastEventSystem : ISystem
     {
         foreach (World<GameWT>.Event<InteractionEvent> interactionEvent in _interactionEventReceiver)
         {
-            if(!GameW.Query<All<MainCamera, UnityCamera>>().One(out World<GameWT>.Entity cameraEntity))
+            if (!GameW.Query<All<MainCamera, UnityCamera>>().One(out World<GameWT>.Entity cameraEntity))
                 continue;
 
             Camera camera = cameraEntity.Read<UnityCamera>().Value;
             Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            
+
             GameW.SendEvent(new RaycastEvent()
             {
-                Origin = ray.origin,
-                Direction = ray.direction.normalized
+                Ray = ray,
             });
         }
     }
